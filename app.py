@@ -6,7 +6,8 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
 navbar = dbc.NavbarSimple(
     brand="PythonGurl",
     sticky="top",
-    color="#95A5A6",
+    color="secondary",
+    dark=True,
 )
 
 
