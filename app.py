@@ -1,8 +1,6 @@
 from dash import Dash, Input, Output, dcc, html
 import dash_bootstrap_components as dbc
 
-# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
-
 app = Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
 
 app.layout = html.Div([
