@@ -1,10 +1,19 @@
+import dash_bootstrap_components as dbc
 from dash import Dash, Input, Output, dcc, html
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 
+navbar = dbc.NavbarSimple(
+    brand="PythonGurl",
+    sticky="top",
+    color="#95A5A6",
+)
+
+
 app.layout = html.Div([
+    navbar,
     html.H2('Hello World'),
     dcc.Dropdown(['LA', 'NYC', 'MTL'],
                  'LA',
