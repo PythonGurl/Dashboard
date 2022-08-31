@@ -2,6 +2,7 @@ import dash_bootstrap_components as dbc
 from dash import Dash, Input, Output, dcc, html
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
+server = app.server
 
 navbar = dbc.NavbarSimple(
     brand="PythonGurl",
