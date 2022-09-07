@@ -15,16 +15,14 @@ navbar = dbc.NavbarSimple(
 app.layout = html.Div([
     navbar,
     html.H2('Hello World'),
-    dcc.Dropdown(['LA', 'NYC', 'MTL'],
-                 'LA',
-                 id='dropdown'
-                 ),
+    dcc.RadioItems(['New York City', 'Montreal', 'San Francisco'],
+                   'Montreal', id='buttons'),
     html.Div(id='display-value')
 ])
 
 
-@app.callback(Output('display-value', 'children'),
-              [Input('dropdown', 'value')])
+@ app.callback(Output('display-value', 'children'),
+               [Input('buttons', 'value')])
 def display_value(value):
     return f'You have selected {value}'
 
