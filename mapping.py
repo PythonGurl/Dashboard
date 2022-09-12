@@ -1,12 +1,13 @@
-import pandas as pd
 import collections
+from operator import index
+import pandas as pd
 
 
 def borough_area():
     df = pd.read_csv('RentData051022/medianAskingRent_All.csv')
-    df.dropna()
+    df = df.dropna()
     d = collections.defaultdict(list)
-    for row in range(df.shape[0]):
+    for row in df.index:
         k = df.at[row, 'Borough']
         v = df.at[row, 'areaName']
         d[k].append(v)
