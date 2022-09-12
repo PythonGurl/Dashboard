@@ -1,5 +1,4 @@
 import collections
-from operator import index
 import pandas as pd
 
 
