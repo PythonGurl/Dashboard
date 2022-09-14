@@ -1,4 +1,3 @@
-from statistics import median
 import dash_bootstrap_components as dbc
 from dash import Dash, Input, Output, dcc, html
 import mapping
