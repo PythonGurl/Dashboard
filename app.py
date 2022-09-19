@@ -43,7 +43,6 @@ def update_areas_dropdown(borough):
 
 
 @app.callback(Output('area-inventory', 'figure'),
-              #   Input('borough-dropdown', 'value'),
               Input('areas-dropdown', 'value')
               )
 def area_inventory_fig(area):
