@@ -19,7 +19,7 @@ def get_layout():
     boroughs = mapping.borough_area()
     return html.Div([
         navbar,
-        html.H2('Hello World'),
+        html.H2('Hello QQ'),
         dcc.Dropdown(sorted(boroughs.keys()), placeholder='Select a borough',
                      id='borough-dropdown'),
         dcc.Dropdown(id='areas-dropdown', placeholder='Areas'),
