@@ -18,13 +18,21 @@ navbar = dbc.NavbarSimple(
 
 def get_layout():
     boroughs = mapping.borough_area()
+    inventory_graph = [
+        dcc.Dropdown(sorted(boroughs.keys()),
+                     placeholder='Select a borough', id='borough-dropdown'),
+        dcc.Dropdown(id='areas-dropdown', placeholder='Areas'),
+        dcc.Graph(id='area-inventory')
+    ]
     return html.Div([
         navbar,
         html.H2('Hello QQ'),
-        dcc.Dropdown(sorted(boroughs.keys()), placeholder='Select a borough',
-                     id='borough-dropdown'),
-        dcc.Dropdown(id='areas-dropdown', placeholder='Areas'),
-        dcc.Graph(id='area-inventory')
+        dbc.Tabs(
+            [
+                dbc.Tab(inventory_graph, label='Renal Listings'),
+                dbc.Tab("Placeholder", label='Tab2')
+            ]
+        ),
     ])
 
 
