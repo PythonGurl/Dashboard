@@ -29,7 +29,7 @@ def get_layout():
         html.H2('Hello QQ'),
         dbc.Tabs(
             [
-                dbc.Tab(inventory_graph, label='Retal Listings'),
+                dbc.Tab(inventory_graph, label='Rental Listings'),
                 dbc.Tab("Placeholder", label='Tab2')
             ]
         ),
