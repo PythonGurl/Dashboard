@@ -18,11 +18,17 @@ navbar = dbc.NavbarSimple(
 
 def get_layout():
     boroughs = mapping.borough_area()
+    inventory_df = read_data.get_rental_inventory()
     inventory_graph = [
         dcc.Dropdown(sorted(boroughs.keys()),
                      placeholder='Select a borough', id='borough-dropdown'),
         dcc.Dropdown(id='areas-dropdown', placeholder='Areas'),
         dcc.Graph(id='area-inventory')
+    ]
+    inventory_sunburst = [
+        dcc.Dropdown(sorted(list(set(inventory_df['date'].dt.year))), id='year-dropdown',
+                     placeholder='Select a year'),
+        dcc.Graph(id='inventory-sunburst')
     ]
     return html.Div([
         navbar,
@@ -33,6 +39,7 @@ def get_layout():
                 dbc.Tab("Placeholder", label='Tab2')
             ]
         ),
+        html.Div(inventory_sunburst)
     ])
 
 
