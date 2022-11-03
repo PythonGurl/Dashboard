@@ -26,7 +26,7 @@ def get_layout():
         dcc.Graph(id='area-inventory-line')
     ]
     inventory_sunburst = [
-        dcc.Dropdown(sorted(list(set(inventory_df['date'].dt.year))), id='year-dropdown',
+        dcc.Dropdown(sorted(set(inventory_df['date'].dt.year)), id='year-dropdown',
                      placeholder='Select a year'),
         dcc.Graph(id='area-inventory-sunburst')
     ]
@@ -44,9 +44,9 @@ def get_layout():
 
 app.layout = get_layout()
 
-# callbacks ---------------------------------------------
+# Callbacks ---------------------------------------------
 
-# rental inverntory line char
+## Rental Inverntory Line Chartn ##
 # auto update area dropdowns based on selected borough
 
 
@@ -74,7 +74,7 @@ def area_inventory_line(area):
                   'value': 'Inventory'}, title='Rental Inventory')
     return fig
 
-# sunburst chart
+## Sunburst Chart ##
 
 
 @app.callback(
