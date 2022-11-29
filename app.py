@@ -1,16 +1,16 @@
 import dash_bootstrap_components as dbc
 import plotly.express as px
 from dash import Dash, Input, Output, dcc, html
-import read_data
 import mapping
-import layout
+import read_data
+from layout import get_layout
 
 app = Dash(__name__, title='New York City Rental Market',
            external_stylesheets=[dbc.themes.CYBORG])
 server = app.server
 
 
-app.layout = layout.get_layout()
+app.layout = get_layout()
 
 # Callbacks ---------------------------------------------
 
